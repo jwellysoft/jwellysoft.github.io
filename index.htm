@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JwellySoft - Billing Software</title>
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #87CEEB; /* SkyBlue 3 Background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Header */
+        header {
+            background-color: #4682B4; /* Darker SkyBlue for header */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #5c9dc9; /* Light SkyBlue on hover */
+        }
+
+        /* Section Styling */
+        .section {
+            text-align: center;
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Pricing Section */
+        .pricing-plan {
+            display: inline-block;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            width: 45%;
+            padding: 30px;
+            margin: 10px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-plan:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-plan h3 {
+            font-size: 1.75rem;
+            color: #333;
+        }
+
+        .pricing-plan p {
+            font-size: 1.25rem;
+            color: #4682B4; /* Dark SkyBlue for pricing */
+            margin: 15px 0;
+        }
+
+        .pricing-plan button {
+            background-color: #87CEEB; /* SkyBlue 3 */
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .pricing-plan button:hover {
+            background-color: #5c9dc9; /* Light SkyBlue on hover */
+        }
+
+    .feature-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .feature {
+        text-align: center;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        max-width: 30%;
+    }
+    .feature:hover {
+        transform: translateY(-10px);
+    }
+    @media (max-width: 768px) {
+        .feature {
+            max-width: 80%;
+            margin-bottom: 20px;
+        }
+    }
+
+        /* Coming Soon Section */
+        .coming-soon {
+            background-color: #f4f4f4;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .coming-soon h2 {
+            color: #4682B4;
+        }
+
+        .coming-soon p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .coming-soon button {
+            background-color: #4682B4;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .coming-soon button:hover {
+            background-color: #5c9dc9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4682B4; /* Dark SkyBlue for footer */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 50px;
+        }
+
+        footer .footer-links a {
+            color: #fff;
+            margin: 0 15px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-links a:hover {
+            color: #5c9dc9; /* Light SkyBlue on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pricing-plan {
+                width: 80%;
+            }
+
+            .pricing-plan,
+            .feature {
+                margin-bottom: 20px;
+            }
+
+            .feature-list {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="icon.ico" alt="JwellySoft Logo" class="logo">
+        <h1>JwellySoft</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="about.htm">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="terms.htm">Terms</a></li>
+            <li><a href="privacy-policy.htm">Privacy Policy</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="section" id="about">
+    <h2>Welcome to JwellySoft</h2>
+    <p>Your go-to solution for a streamlined, secure jewellery shop billing system.</p>
+</div>
+
+<div class="section" id="features" style="margin-top: 20px;">
+    <h2>Features</h2>
+    <div class="feature-list">
+        <div class="feature" style="flex: 1; margin: 10px;">
+            <div class="feature-icon" style="font-size: 2rem; color: #4682B4; margin-bottom: 15px;">
+                &#9733; <!-- Example icon -->
+            </div>
+            <h3>Full Feature Access</h3>
+            <p>Both monthly and yearly plans provide access to the complete range of features, designed to make your billing process smoother and more efficient.</p>
+        </div>
+        <div class="feature" style="flex: 1; margin: 10px;">
+            <div class="feature-icon" style="font-size: 2rem; color: #4682B4; margin-bottom: 15px;">
+                &#128274; <!-- Example icon -->
+            </div>
+            <h3>Secure System</h3>
+            <p>We offer a highly secure mechanism to protect your data, ensuring that your jewellery shop's sensitive information is always safe.</p>
+        </div>
+        <div class="feature" style="flex: 1; margin: 10px;">
+            <div class="feature-icon" style="font-size: 2rem; color: #4682B4; margin-bottom: 15px;">
+                &#128172; <!-- Example icon -->
+            </div>
+            <h3>Full Support</h3>
+            <p>The monthly plan includes basic email support, while the yearly plan provides swift email support to address your concerns quickly.</p>
+        </div>
+    </div>
+    <div class="feature-list">
+        <div class="feature" style="flex: 1; margin: 10px;">
+            <div class="feature-icon" style="font-size: 2rem; color: #4682B4; margin-bottom: 15px;">
+                &#128200; <!-- Example icon -->
+            </div>
+            <h3>Complete GST & VAT Compliance</h3>
+            <p>JwellySoft ensures compliance with GST & VAT. Automatically calculate and manage GST/VAT for all transactions, ensuring accurate tax filings and reducing the chances of errors during audits.</p>
+        </div>
+        <div class="feature" style="flex: 1; margin: 10px;">
+            <div class="feature-icon" style="font-size: 2rem; color: #4682B4; margin-bottom: 15px;">
+                &#128187; <!-- Example icon -->
+            </div>
+            <h3>Ease of Use</h3>
+            <p>Our intuitive and user-friendly interface is designed to simplify complex billing tasks. Even if you're not tech-savvy, navigating the system will be a breeze.</p>
+        </div>
+        <div class="feature" style="flex: 1; margin: 10px;">
+            <div class="feature-icon" style="font-size: 2rem; color: #4682B4; margin-bottom: 15px;">
+                &#128337; <!-- Example icon -->
+            </div>
+            <h3>Swift Report Generation</h3>
+            <p>Generate detailed reports at lightning speed. Sales, inventory, and tax reports are just a click away, enabling you to make informed decisions quickly.</p>
+        </div>
+    </div>
+    <div class="feature-list">
+        <div class="feature" style="flex: 1; margin: 10px;">
+            <div class="feature-icon" style="font-size: 2rem; color: #4682B4; margin-bottom: 15px;">
+                &#128202; <!-- Example icon -->
+            </div>
+            <h3>Advanced Inventory Management</h3>
+            <p>Track jewellery stock in real-time. Our advanced inventory system automatically updates stock levels after each sale, helping you stay organized.</p>
+        </div>
+<div class="feature" style="flex: 1; margin: 10px;">
+    <div class="feature-icon" style="font-size: 2rem; color: #4682B4; margin-bottom: 15px;">
+        &#128424; <!-- Barcode Scanner Icon -->
+    </div>
+    <h3>Barcode Scanner Integration</h3>
+    <p>Use Barcode Scanners to effortlessly scan barcodes to add jewellery items to your inventory or process sales, speeding up transactions and improving accuracy.</p>
+</div>
+    </div>
+</div>
+
+
+<!-- Coming Soon Section -->
+<!-- Coming Soon Section -->
+<div class="coming-soon">
+    <h2>Coming Soon!</h2>
+    <p>We are working hard to bring the best billing solution to your jewellery shop. Stay tuned for exciting updates, features, and launch announcements!</p>
+    <p>Thank you for your patience and support. We're almost there!</p>
+</div>
+
+
+<div class="section" id="pricing">
+    <h2>Pricing Plans</h2>
+    <div class="pricing-plan">
+        <h3>Monthly Plan</h3>
+        <p>₹249 per month</p>
+        <p>Basic email support</p>
+        <button disabled>Download</button>
+    </div>
+    <div class="pricing-plan">
+        <h3>Yearly Plan</h3>
+        <p>₹208 per month (Billed yearly)</p>
+        <p>Swift email support</p>
+        <button>Download</button>
+    </div>
+</div>
+
+<div class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: jwellysoft@gmail.com</p>
+    <p>Phone: +91 82876 19284</p>
+    <p>Instagram: <a href="https://www.instagram.com/jwellysoft" target="_blank">@jwellysoft</a></p> <!-- Add your Instagram handle here -->
+    <p>X: <a href="https://www.twitter.com/jwellysoft" target="_blank">@jwellysoft</a></p> <!-- Twitter handle -->
+
+
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="terms.htm">Terms</a>
+        <a href="privacy-policy.htm">Privacy Policy</a>
+        <a href="refund-policy.htm">Refund Policy</a> <!-- New Refund Policy link -->
+        <a href="disclaimer.htm">Disclaimer</a> <!-- New Disclaimer link -->
+    </div>
+    <p>&copy; 2024 JwellySoft. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
